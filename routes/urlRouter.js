@@ -1,6 +1,8 @@
 import express from 'express';
-import { generateShortURL } from '../controllers/urlController.js';
+import { generateShortURL, redirectToOriginalURL, showAnalytics } from '../controllers/urlController.js';
 
 export const router = express.Router();
 
-router.post('/', generateShortURL);
+router.get('/:shortId', redirectToOriginalURL);
+router.get('/analytics/:shortId', showAnalytics);
+router.post('/url', generateShortURL);
