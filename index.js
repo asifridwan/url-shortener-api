@@ -5,7 +5,7 @@ import { connectDB } from './models/connection.js';
 const app = express();
 const PORT = 5000;
 
-connectDB('mongodb://127.0.0.1:27017/url-shortner').then(() => console.log('Database works !'));
+connectDB('mongodb://127.0.0.1:27017/url-shortner');
 
 app.use(express.json());
 app.use('/', router);
